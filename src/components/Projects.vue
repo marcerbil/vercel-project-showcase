@@ -1,16 +1,19 @@
 <script>
 import 'animate.css';
-import axios from 'axios';
+import { Icon } from '@iconify/vue';
 
 export default {
     name: 'Projects',
     props: {
         projects: Array
     },
+    components: {
+        Icon
+    },
     methods: {
         openProject(id) {
             this.$router.push({ name: 'project', params: { id: id } })
-            console.log('routing: ' + id);
+            //console.log('routing: ' + id);
         }
     }
 }
@@ -49,7 +52,9 @@ export default {
 
                     <div v-if="project.skills && project.skills.length" class="skills is-flex">
                         <div v-for="(skill, index) in project.skills.slice(0, 3)" :key="index">
-                            <span :class="['tag mr-2', skill.color]">{{ skill.name }}</span>
+                            <span :class="['tag mr-2', skill.color]">
+                                <Icon :icon="skill.icon" />&nbsp;{{ skill.name }}
+                            </span>
                         </div>
                     </div>
                 </div>

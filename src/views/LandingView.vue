@@ -90,13 +90,15 @@ export default {
 }
 
 .title {
-    font-size: 5rem;
+    font-size: 6rem;
     width: 90%;
     line-height: 1;
 }
 
 .subtitle {
-    width: 84%;
+    width: 80%;
+    font-family: var(--bodyFont);
+    line-height: 1.4;
 }
 
 .cta .button {

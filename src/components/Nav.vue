@@ -7,7 +7,6 @@ export default {
         Icon,
     }
 }
-
 </script>
 
 <template>
@@ -27,7 +26,7 @@ export default {
         <div id="mainNavigation" class="navbar-menu">
 
             <div class="navbar-end">
-                <div class="navbar-item">
+                <div class="navbar-item ">
                     <router-link :to="{ name: 'landing' }">
                         <span class="icon-text">
                             <span class="icon">
