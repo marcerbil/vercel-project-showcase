@@ -3,8 +3,6 @@ import 'animate.css';
 import Nav from '../components/Nav.vue'
 import Project from '../components/Project.vue'
 
-//import axios from 'axios';
-
 export default {
     name: "ProjectView",
     data() {

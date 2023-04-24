@@ -8,23 +8,6 @@ export default {
         projects: Array
     },
     methods: {
-        async fetchProject(id) {
-            try {
-                const response = await axios.get('https://node-server-384520.nw.r.appspot.com/projects/', {
-                    params: {
-                        id: id
-                    },
-                    headers: {
-                        'Access-Control-Allow-Origin': '*'
-                    },
-                });
-                return response.data.projects;
-            } catch (error) {
-                console.log(error);
-                return [];
-            }
-        },
-
         openProject(id) {
             this.$router.push({ name: 'project', params: { id: id } })
             console.log('routing: ' + id);

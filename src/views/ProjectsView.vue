@@ -29,7 +29,7 @@ export default {
             'Access-Control-Allow-Origin': '*'
           },
         });
-        return response.data.projects;
+        return response.data;
       } catch (error) {
         console.log(error);
         return [];

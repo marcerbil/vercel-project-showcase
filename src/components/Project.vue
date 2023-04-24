@@ -1,6 +1,7 @@
 <script>
 import 'animate.css';
 import axios from 'axios';
+import $ from "jquery";
 
 export default {
     name: "Project",
@@ -31,7 +32,7 @@ export default {
                         'Access-Control-Allow-Origin': '*'
                     }
                 });
-                return response.data.projects;
+                return response.data;
             } catch (error) {
                 console.log(error);
                 return [];
