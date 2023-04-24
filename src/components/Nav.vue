@@ -1,8 +1,20 @@
+<script>
+import { Icon } from '@iconify/vue';
+
+export default {
+    name: "Nav",
+    components: {
+        Icon,
+    }
+}
+
+</script>
+
 <template>
     <nav class="navbar has-background-transparent" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-                <img src="../assets/images/logo.svg" class="logo">
+                <img src="../assets/logo.svg" class="logo">
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -19,7 +31,7 @@
                     <router-link :to="{ name: 'landing' }">
                         <span class="icon-text">
                             <span class="icon">
-                                <ion-icon name="home-outline"></ion-icon>
+                                <Icon icon="ph:house-line" />
                             </span>
                             <span>Home</span>
                         </span>
@@ -29,7 +41,7 @@
                     <router-link :to="{ name: 'projects' }">
                         <span class="icon-text">
                             <span class="icon">
-                                <ion-icon name="code-slash-outline"></ion-icon>
+                                <Icon icon="ph:code" />
                             </span>
                             <span>Projects</span>
                         </span>
@@ -39,7 +51,7 @@
                     <a href="https://www.linkedin.com/in/marc-erbil-11646294/">
                         <span class="icon-text">
                             <span class="icon">
-                                <ion-icon name="logo-linkedin"></ion-icon>
+                                <Icon icon="ph:linkedin-logo" />
                             </span>
                             <span>Contact</span>
                         </span>

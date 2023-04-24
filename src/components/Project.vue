@@ -1,12 +1,19 @@
 <script>
 import 'animate.css';
 import axios from 'axios';
-import $ from "jquery";
+import jQuery from 'jquery';
+const $ = jQuery.noConflict();
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { Icon } from '@iconify/vue';
 
 export default {
     name: "Project",
     props: {
         id: String,
+    },
+    components: {
+        Icon,
     },
     data() {
         return {
@@ -14,14 +21,14 @@ export default {
         }
     },
     async created() {
-        this.projectData = await this.fetchProject(this.id)
+        this.projectData = await this.fetchProject(this.id);
 
         $(document).ready(function () {
-            $('.magnific-popup').magnificPopup({
-                type: 'image'
-            });
-
             $('[data-defocus="true"]').addClass("defocus");
+        });
+
+        Fancybox.bind("[data-fancybox]", {
+            // Your custom options
         });
     },
     methods: {
@@ -56,6 +63,7 @@ export default {
                     <div v-for="url in projectData.liveUrl">
                         <a :href="url" :alt="'See it live: ' + url" target="_blank"
                             class="subtitle is-6 has-text-white has-text-weight-light">
+                            <Icon icon="ph:power" />
                             {{ url }}
                         </a>
                     </div>
@@ -63,7 +71,9 @@ export default {
 
                 <div v-if="projectData.skills && projectData.skills.length" class="skills is-flex mb-6">
                     <div v-for="skill in projectData.skills">
-                        <span :class="['tag mr-2 mt-2', skill.color]">{{ skill.name }}</span>
+                        <span :class="['tag mr-2 mt-2', skill.color]">
+                            <Icon :icon="skill.icon" />&nbsp;{{ skill.name }}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -85,11 +95,13 @@ export default {
             <!-- Right -->
             <div v-if="projectData.media && projectData.media.length" data-defocus="true"
                 class="column is-3 is-flex is-flex-wrap-wrap is-flex-direction-column is-align-content-center project-media">
-                <div v-for="(item, index) in projectData.media" :key="index" class="project-media-wrapper">
-                    <a :href="item.url" class="magnific-popup">
-                        <img :src="item.url" :alt="item.name" class="image is-96x96 mb-4">
+
+                <div v-for="(image, imageIndex) in projectData.media" class="project-media-wrapper" :key="imageIndex">
+                    <a :href="image.url" data-fancybox="gallery" :data-caption="image.name">
+                        <img :src="image.url" :alt="image.name" class="image is-96x96 mb-4">
                     </a>
                 </div>
+
             </div>
 
         </div>

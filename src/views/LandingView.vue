@@ -1,10 +1,12 @@
 <script>
 import Nav from '../components/Nav.vue'
+import { Icon } from '@iconify/vue';
 
 export default {
     name: 'LandingView',
     components: {
-        Nav
+        Nav,
+        Icon
     },
 }
 </script>
@@ -35,7 +37,7 @@ export default {
                                 <router-link :to="{ name: 'projects' }" class="button primary mr-3">
                                     <span class="icon-text">
                                         <span class="icon">
-                                            <ion-icon name="code-slash-outline"></ion-icon>
+                                            <Icon icon="ph:code" />
                                         </span>
                                         <span>See my work</span>
                                     </span> 
@@ -44,7 +46,7 @@ export default {
                                 <a href="https://www.linkedin.com/in/marc-erbil-11646294/" class="button secondary">
                                     <span class="icon-text">
                                         <span class="icon">
-                                            <ion-icon name="logo-linkedin"></ion-icon>
+                                            <Icon icon="ph:linkedin-logo" />
                                         </span>
                                         <span>Contact</span>
                                     </span> 
@@ -88,7 +90,7 @@ export default {
 }
 
 .title {
-    font-size: 6rem;
+    font-size: 5rem;
     width: 90%;
     line-height: 1;
 }

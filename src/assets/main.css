@@ -1,12 +1,15 @@
 @import './base.css';
 @import 'bulma.min.css';
 
+@import url("https://use.typekit.net/fvh0bfq.css");
+
+
 /* vars */
 :root {
   --mastheadHeight: 72px;
   --contentHeightCalc: 250px;
   --titleFont: articulat-cf, sans-serif;
-  --bodyFont: leo, sans-serif;
+  --bodyFont: pt-serif, sans-serif;
   --customBoxShadow: 0 2px 30px -16px rgba(0, 0, 0, 0.3);
 
   --backgroundColor: #0d0d2e;
