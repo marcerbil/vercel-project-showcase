@@ -17,7 +17,7 @@ export default {
         <div class="landing">
 
             <div class="columns is-fullheight">
-                <div class="column is-two-thirds-desktop">
+                <div class="column is-half-desktop">
                     <div class="grid-container">
                         <div class="grid-item-top">
                             <h1 class="text-bg-gradient title mb-0">Full stack developer &amp;</h1>
