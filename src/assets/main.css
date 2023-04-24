@@ -1,5 +1,5 @@
 @import './base.css';
-@import '/bulma/css/bulma.css';
+@import 'bulma.min.css';
 
 /* vars */
 :root {

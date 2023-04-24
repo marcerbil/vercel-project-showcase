@@ -1,10 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const LandingView = () => import('../views/LandingView.vue')
-const ProjectsView = () => import('../views/ProjectsView.vue')
-const ProjectView = () => import('../views/ProjectView.vue')
+// const LandingView = () => import('../views/LandingView.vue')
+// const ProjectsView = () => import('../views/ProjectsView.vue')
+// const ProjectView = () => import('../views/ProjectView.vue')
+
+import LandingView from '../views/LandingView.vue';
+import ProjectsView from '../views/ProjectsView.vue';
+import ProjectView from '../views/ProjectView.vue';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory("/"),
   routes: [
     {
       path: '/',
