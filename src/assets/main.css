@@ -1,0 +1,194 @@
+@import './base.css';
+@import 'bulma/css/bulma.css';
+
+/* vars */
+:root {
+  --mastheadHeight: 72px;
+  --contentHeightCalc: 250px;
+  --titleFont: articulat-cf, sans-serif;
+  --bodyFont: leo, sans-serif;
+  --customBoxShadow: 0 2px 30px -16px rgba(0, 0, 0, 0.3);
+
+  --backgroundColor: #0d0d2e;
+  --accentColor: #2e2e2e;
+  --textColor: #222;
+  --inverseColor: #222;
+}
+
+body {
+  font-family: var(--bodyFont);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--titleFont);
+  color: var(--textColor);
+}
+
+p {
+  font-weight: 200;
+  font-size: 1.2rem;
+  color: var(--textColor);
+}
+
+.button {
+  font-weight: 700;
+  font-family: var(--titleFont);
+  padding-top: 10px;
+}
+
+/* Bulma override */
+.container-custom {
+  max-width: 70vw !important;
+}
+
+.overflow-hidden-custom {
+  overflow-y: hidden;
+}
+
+.overflow-scroll-custom {
+  overflow-y: scroll;
+}
+
+.has-background-transparent {
+  background-color: transparent;
+}
+
+.is-fullheight {
+  height: calc(100% - 150px);
+  max-height: 700px;
+}
+
+/* main wrapper */
+.main {
+  height: 100vh;
+}
+
+.main-bg {
+  background-color: var(--backgroundColor);
+}
+
+.main-landing {
+  background: linear-gradient(#163a76, rgba(20, 40, 109, .94), #0b2148);
+}
+
+/* scrollbar */
+.custom-scrollbar::-webkit-scrollbar-button {
+  width: 8px;
+  border-radius: 32px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  width: 8px;
+  border-radius: 32px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  background-color: var(--backgroundColor);
+  width: 8px;
+  border-radius: 32px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--accentColor);
+  width: 8px;
+  border-radius: 32px;
+}
+
+/* skills */
+.skills .tag {
+  font-family: var(--titleFont);
+  font-weight: 300;
+  color: #FFF;
+}
+
+.skills .tag.orange {
+  background-color: rgb(248, 123, 6);
+}
+
+.skills .tag.yellow {
+  background-color: rgb(230, 204, 8);
+}
+
+.skills .tag.purple {
+  background-color: rgb(149, 69, 230);
+}
+
+.skills .tag.red {
+  background-color: rgb(229, 39, 1);
+}
+
+.skills .tag.lightblue {
+  background-color: rgb(7, 178, 225);
+}
+
+.skills .tag.blue {
+  background-color: rgb(24, 109, 189);
+}
+
+.skills .tag.lightgreen {
+  background-color: rgb(93, 255, 171);
+}
+
+.skills .tag.green {
+  background-color: rgb(1, 178, 104);
+}
+
+.skills .tag.black {
+  background-color: rgb(0, 0, 0);
+}
+
+.skills .tag.brown {
+  background-color: rgb(117, 18, 18);
+}
+
+/* custom animations */
+
+/* Slow fade in, after rest of page */
+.animate__fadeInSlow {
+  animation: fadeIn;
+  -webkit-animation-duration: 2s !important;
+  animation-duration: 2s !important;
+}
+
+/* defocus content */
+.defocus {
+  opacity: 0.1;
+  transition: all 3s ease-in;
+}
+
+.defocus:hover {
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+/* custom icons */
+.custom-icon::before {
+  content: "";
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  height: 70px;
+  width: 70px;
+  background-position: center;
+  background-size: 70px;
+  z-index: 99;
+  opacity: 0.2;
+}
+
+/* custom text background gradient */
+.text-bg-gradient {
+  background-image: linear-gradient(to right, #98a2f2, #9d5cf2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-bg-gradient--reversed {
+  background-image: linear-gradient(to left, #98a2f2, #9d5cf2);
+}
