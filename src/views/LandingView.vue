@@ -40,7 +40,7 @@ export default {
                                             <Icon icon="ph:code" />
                                         </span>
                                         <span>See my work</span>
-                                    </span> 
+                                    </span>
                                 </router-link>
 
                                 <a href="https://www.linkedin.com/in/marc-erbil-11646294/" class="button secondary">
@@ -49,7 +49,7 @@ export default {
                                             <Icon icon="ph:linkedin-logo" />
                                         </span>
                                         <span>Contact</span>
-                                    </span> 
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -71,6 +71,12 @@ export default {
     height: 100%;
 }
 
+@media(max-device-width: 1200px) {
+    .grid-container {
+        width: 100%;
+    }
+}
+
 .grid-item-top {
     grid-row-start: 1;
     grid-row-end: 2;
@@ -89,16 +95,36 @@ export default {
     padding: 3rem 7rem 0;
 }
 
+@media (max-device-width: 500px) {
+    .landing {
+        padding: 2rem 2rem 0;    }
+}
+
 .title {
     font-size: 6rem;
     width: 90%;
     line-height: 1;
 }
 
+@media (max-device-width: 500px) {
+    .title {
+        font-size: 3.5rem;
+        display: inline;
+    }
+}
+
 .subtitle {
     width: 80%;
     font-family: var(--bodyFont);
     line-height: 1.4;
+}
+
+@media (max-device-width: 500px) {
+    .subtitle {
+        width: 100%;
+        padding: 0 !Important;
+        font-size: 1.75rem;
+    }
 }
 
 .cta .button {
@@ -115,27 +141,5 @@ export default {
 
 .custom-icon svg {
     width: 20px;
-}
-
-/* MEDIA QUERIES */
-
-@media(max-device-width: 1400px) {
-  :root {
-    --mastheadHeight: 100px;
-  }
-}
-
-/* Projects list */
-@media(max-device-width: 1200px) {
-  .grid-container {
-    width: 100%;
-  }
-}
-
-
-@media(max-device-width: 450px) {
-  .is-fullheight {
-    max-height: 500px;
-  }
 }
 </style>

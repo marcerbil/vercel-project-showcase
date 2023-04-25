@@ -13,7 +13,6 @@ export default {
     methods: {
         openProject(id) {
             this.$router.push({ name: 'project', params: { id: id } })
-            //console.log('routing: ' + id);
         }
     }
 }
@@ -50,9 +49,9 @@ export default {
                         </router-link>
                     </div>
 
-                    <div v-if="project.skills && project.skills.length" class="skills is-flex">
+                    <div v-if="project.skills && project.skills.length" class="skills is-flex is-flex-wrap-wrap">
                         <div v-for="(skill, index) in project.skills.slice(0, 3)" :key="index">
-                            <span :class="['tag mr-2', skill.color]">
+                            <span :class="['tag mr-2 mb-2', skill.color]">
                                 <Icon :icon="skill.icon" />&nbsp;{{ skill.name }}
                             </span>
                         </div>

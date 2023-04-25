@@ -5,6 +5,19 @@ export default {
     name: "Nav",
     components: {
         Icon,
+    },
+    data() {
+        return {
+            isMenuOpen: Boolean
+        }
+    },
+    created() {
+        const mediaQuery = window.matchMedia('(max-width: 500px)');
+        if (mediaQuery.matches) {
+            this.isMenuOpen = false;
+        } else {
+            this.isMenuOpen = true;
+        }
     }
 }
 </script>
@@ -16,18 +29,18 @@ export default {
                 <img src="../assets/logo.svg" class="logo">
             </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavigation"
+                @click="this.isMenuOpen = !this.isMenuOpen;">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
 
-        <div id="mainNavigation" class="navbar-menu">
-
+        <div id="mainNavigation" class="navbar-menu" v-if=" isMenuOpen ">
             <div class="navbar-end">
                 <div class="navbar-item ">
-                    <router-link :to="{ name: 'landing' }">
+                    <router-link :to=" { name: 'landing' } ">
                         <span class="icon-text">
                             <span class="icon">
                                 <Icon icon="ph:house-line" />
@@ -37,7 +50,7 @@ export default {
                     </router-link>
                 </div>
                 <div class="navbar-item mr-3">
-                    <router-link :to="{ name: 'projects' }">
+                    <router-link :to=" { name: 'projects' } ">
                         <span class="icon-text">
                             <span class="icon">
                                 <Icon icon="ph:code" />
@@ -58,6 +71,7 @@ export default {
                 </div>
             </div>
         </div>
+
     </nav>
 </template>
 
@@ -66,6 +80,21 @@ export default {
     font-family: var(--titleFont);
     font-weight: 700;
     padding: 3rem 6rem 0;
+}
+
+@media(max-device-width: 500px) {
+    .navbar {
+        padding: 1rem 1rem 0;
+    }
+
+    .navbar-burger {
+        margin-top: 10px;
+    }
+
+    .navbar-menu {
+        display: unset;
+        background-color: transparent;
+    }
 }
 
 .navbar a {

@@ -56,17 +56,6 @@ export default {
   padding: 6rem 6rem 0;
 }
 
-@media(max-device-width: 768px) {
-  .card {
-    margin: 0 auto !important;
-  }
-
-  .projects {
-    width: 70% !important;
-    margin: 0 auto !important;
-  }
-}
-
 @media(max-device-width: 1200px) {
   .card {
     min-height: unset !important;
@@ -81,5 +70,23 @@ export default {
     padding: 4rem 2rem 0 !important;
   }
 
+}
+
+@media(max-device-width: 768px) {
+  .card {
+    margin: 0 auto !important;
+  }
+
+  .projects {
+    width: 70% !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media(max-device-width: 500px) {
+  .projects {
+    width: 85% !important;
+    padding: 4rem 0 !important;
+  }
 }
 </style>

@@ -116,6 +116,27 @@ export default {
     overflow: hidden;
 }
 
+@media(max-device-width: 1400px) {
+    .project {
+        padding: 6rem 10rem;
+    }
+}
+
+@media(max-device-width: 500px) {
+    .project {
+        padding: 12px;
+        overflow-y: scroll;
+    }
+
+    .project-content {
+        height: 100vh!important;
+        padding: 1.75rem!important;
+    }
+    .project-content p {
+        width: 100%;
+    }
+}
+
 .project-masthead {
     margin-bottom: var(--mastheadHeight);
 }
@@ -199,9 +220,4 @@ export default {
     transition: all 500ms ease-in;
 }
 
-@media(max-device-width: 1400px) {
-    .project {
-        padding: 6rem 10rem !important;
-    }
-}
 </style>
