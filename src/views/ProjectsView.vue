@@ -18,13 +18,13 @@ export default {
     }
   },
   async created() {
-    this.projects = await this.fetchProjects()
+    this.projects = await this.fetchProjects();
   },
   methods: {
     async fetchProjects() {
 
       try {
-        const response = await axios.get('https://node-server-384520.nw.r.appspot.com/projects/', {
+        const response = await axios.get(`${process.env.VUE_APP_NODE_API_URL}/projects/`, {
           headers: {
             'Access-Control-Allow-Origin': '*'
           },
@@ -41,13 +41,14 @@ export default {
 </script>
 
 <template>
-  <div class="main main-bg overflow-scroll-custom">
+  <div class="main main-bg main-bg--projects overflow-scroll-custom">
     <Nav />
-    <AnimatedBackground />
+    <!-- <AnimatedBackground /> -->
 
     <div class="projects">
       <Projects :projects="projects" />
     </div>
+    
   </div>
 </template>
 

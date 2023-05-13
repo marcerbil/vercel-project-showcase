@@ -98,7 +98,7 @@ export default {
 }
 
 .navbar a {
-    color: #fff;
+    
     font-weight: 700;
 }
 

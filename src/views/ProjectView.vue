@@ -21,7 +21,7 @@ export default {
 </script>
   
 <template>
-    <div class="animate__animated animate__fadeIn overflow-hidden-custom main main-bg">
+    <div class="animate__animated animate__fadeIn overflow-hidden-custom main main-bg main-bg--projects">
         
         <Nav data-defocus="true" />
         <Project :id="id" />

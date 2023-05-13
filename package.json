@@ -6,7 +6,7 @@
     "lint": "vue-cli-service lint"
   },
   "engines": {
-    "node": "16.15"
+    "node": "16.15.1"
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.16",

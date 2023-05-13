@@ -21,6 +21,12 @@ export default {
 <template>
     <div class="columns is-variable is-1 is-multiline animate__animated animate__fadeIn">
 
+        <div class="projects-area-intro">
+            <p>
+                Hey there! Welcome to my portfolio section. Here you'll find some of the projects I've worked on as a full-stack/frontend developer. I'm passionate about creating user-friendly interfaces and building robust backends to power them. Feel free to take a look around and get a sense of my skills and style. If you have any questions or would like to discuss a potential project, don't hesitate to reach out!
+            </p>
+        </div>
+
         <div class="column is-one-third-desktop is-full-tablet is-full-mobile animate__animated animate__fadeIn"
             v-for="(project, index) in projects" :key="project.id">
 
@@ -33,18 +39,18 @@ export default {
                 <div class="card-content p-5">
                     <div class="media">
                         <div class="media-content">
-                            <h5 class="title has-text-white is-4">{{ project.title }}</h5>
+                            <h5 class="title is-4">{{ project.title }}</h5>
                         </div>
                     </div>
 
                     <div class="content">
-                        <p class="has-text-white is-size-6">
+                        <p class="is-size-6">
                             {{ project.intro }}
                         </p>
 
                         <!-- load project, pass in id -->
                         <router-link :to="{ name: 'project', params: { id: project.id } }"
-                            class="is-underlined has-text-white mt-3 link">
+                            class="is-underlined mt-3 link">
                             Read more
                         </router-link>
                     </div>
@@ -64,11 +70,22 @@ export default {
 </template>
 
 <style scoped>
+.projects-area-intro {
+    margin: 4rem auto 6rem;
+    width: 70%;
+}
+
+.projects-area-intro p {
+    text-align: center;
+    line-height: 1.8;
+}
+
 .card {
     margin: 0 auto 6rem;
     min-height: 465px;
     background-color: var(--accentColor);
     color: var(--textColor);
+    border: 1px solid #c3c3c3;
     box-shadow: var(--customBoxShadow);
     -webkit-transition: all 200ms ease-in;
     transition: all 200ms ease-in;

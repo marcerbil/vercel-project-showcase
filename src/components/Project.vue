@@ -28,13 +28,13 @@ export default {
         });
 
         Fancybox.bind("[data-fancybox]", {
-            // Your custom options
+            // custom options
         });
     },
     methods: {
         async fetchProject(id) {
             try {
-                const response = await axios.get(`https://node-server-384520.nw.r.appspot.com/projects/${id}`, {
+                const response = await axios.get(`${process.env.VUE_APP_NODE_API_URL}/projects/${id}`, {
                     headers: {
                         'Access-Control-Allow-Origin': '*'
                     }
@@ -55,14 +55,14 @@ export default {
 
             <!-- Left -->
             <div data-defocus="true" class="column is-3 project-sidebar">
-                <h1 class="title is-1 has-text-white mb-6">{{ projectData.title }}</h1>
+                <h1 class="title is-1 mb-6">{{ projectData.title }}</h1>
 
-                <p class="subtitle is-5 has-text-white has-text-weight-light mb-6">{{ projectData.intro }}</p>
+                <p class="subtitle is-5 has-text-weight-light mb-6">{{ projectData.intro }}</p>
 
                 <div v-if="projectData.liveUrl && projectData.liveUrl.length" class="project-links mb-6">
                     <div v-for="url in projectData.liveUrl">
                         <a :href="url" :alt="'See it live: ' + url" target="_blank"
-                            class="subtitle is-6 has-text-white has-text-weight-light">
+                            class="subtitle is-6 has-text-weight-light">
                             <Icon icon="ph:power" />
                             {{ url }}
                         </a>
@@ -84,9 +84,9 @@ export default {
 
                 <div v-for="(item, index) in projectData.content" :key="index">
                     <h3 v-if="item.subheader && item.subheader.length"
-                        class="subtitle is-3 has-text-weight-light has-text-white mb-3">{{ item.subheader }}</h3>
+                        class="subtitle is-3 has-text-weight-light mb-3">{{ item.subheader }}</h3>
 
-                    <p class="subtitle is-5 has-text-white mb-6">
+                    <p class="subtitle is-5 mb-6">
                         {{ item.text }}
                     </p>
                 </div>
@@ -211,6 +211,7 @@ export default {
 }
 
 .project-media a img {
+    border: 1px solid #c5c1c1;
     box-shadow: var(--customBoxShadow);
 }
 
