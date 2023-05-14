@@ -10,19 +10,36 @@ const router = createRouter({
       path: '/',
       name: 'landing',
       component: LandingView,
+      meta: { 
+        title: 'Marc Erbil | Full stack developer' 
+      }
     },
     {
       path: '/projects',
       name: 'projects',
       component: ProjectsView,
+      meta: { 
+        title: 'Marc Erbil | Projects'
+      }
     },
     {
       path: '/project/:id',
       name: 'project',
       component: ProjectView,
-      props: true
+      props: true,
+      meta: { 
+        title: 'Marc Erbil | Projects'
+      }
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
+  next();
+});
+
 
 export default router

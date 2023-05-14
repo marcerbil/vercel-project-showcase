@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <div class="main main-landing">
+    <div class="main main-bg">
 
         <Nav />
 
@@ -21,12 +21,12 @@ export default {
             <div class="columns is-fullheight">
                 <div class="column is-half-desktop">
                     <div class="grid-container">
-                        <div class="grid-item-top">
+                        <div class="grid-item-top animate__fadeInSlow">
                             <h1 class="text-bg-gradient title mb-0">//developer</h1>
                             <h1 class="text-bg-gradient text-bg-gradient--reversed title mb-0">//designer</h1>
                             <h1 class="text-bg-gradient title mb-0">//creative</h1>
                         </div>
-                        <div class="grid-item-middle">
+                        <div class="grid-item-middle animate__fadeInSlower">
                             <h2 class="subtitle pr-6">
                                 I'm Marc, a UK-based full stack dev. I dabble in different projects and areas, but my
                                 passion is in creating sleek <span class="has-text-weight-bold">front ends</span> & <span
@@ -36,7 +36,7 @@ export default {
                                 Got a project you'd like to discuss? <a href="mailto:marcerbil@gmail.com">Let's talk.</a>
                             </h2>
                         </div>
-                        <div class="grid-item-bottom">
+                        <div class="grid-item-bottom animate__fadeInSlower">
                             <div class="cta">
                                 <router-link :to="{ name: 'projects' }" class="button-custom button-custom--cta mr-5">
                                     <span class="icon-text">
@@ -141,28 +141,6 @@ export default {
 .cta .button {
     vertical-align: middle;
 }
-
-.button-custom {
-    background-color: white;
-    padding: 1rem;
-    border: 2px solid #9b79f2;
-    border-radius: 4px;
-    box-shadow: var(--customBoxShadow);
-    transition: all 300ms ease;
-}
-
-.button-custom--cta {
-    background-color: #9b79f2;
-    color: white;
-}
-
-.button-custom:hover {
-    box-shadow: none;
-    transition: all 300ms ease;
-}
-
-
-.button-custom 
 
 .custom-icon svg {
     width: 20px;

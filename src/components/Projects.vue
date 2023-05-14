@@ -19,13 +19,16 @@ export default {
 </script>
 
 <template>
-    <div class="columns is-variable is-1 is-multiline animate__animated animate__fadeIn">
+    <div class="projects-intro animate__animated animate__fadeIn">
+        <p>
+            Hey there! Welcome to my portfolio section. Here you'll find some of the projects I've worked on as a
+            full-stack/frontend developer. I'm passionate about creating user-friendly interfaces and building robust
+            backends to power them. Feel free to take a look around and get a sense of my skills and style. If you have any
+            questions or would like to discuss a potential project, don't hesitate to reach out!
+        </p>
+    </div>
 
-        <div class="projects-area-intro">
-            <p>
-                Hey there! Welcome to my portfolio section. Here you'll find some of the projects I've worked on as a full-stack/frontend developer. I'm passionate about creating user-friendly interfaces and building robust backends to power them. Feel free to take a look around and get a sense of my skills and style. If you have any questions or would like to discuss a potential project, don't hesitate to reach out!
-            </p>
-        </div>
+    <div class="columns is-variable is-1 is-multiline animate__animated animate__fadeIn">
 
         <div class="column is-one-third-desktop is-full-tablet is-full-mobile animate__animated animate__fadeIn"
             v-for="(project, index) in projects" :key="project.id">
@@ -49,8 +52,7 @@ export default {
                         </p>
 
                         <!-- load project, pass in id -->
-                        <router-link :to="{ name: 'project', params: { id: project.id } }"
-                            class="is-underlined mt-3 link">
+                        <router-link :to="{ name: 'project', params: { id: project.id } }" class="is-underlined mt-3 link">
                             Read more
                         </router-link>
                     </div>
@@ -70,12 +72,15 @@ export default {
 </template>
 
 <style scoped>
-.projects-area-intro {
+.projects-intro {
     margin: 4rem auto 6rem;
-    width: 70%;
+    background-color: rgb(255 255 255 / 52%);
+    padding: 3rem;
+    border: 1px solid #ececec;
+    border-radius: 4px;
 }
 
-.projects-area-intro p {
+.projects-intro p {
     text-align: center;
     line-height: 1.8;
 }

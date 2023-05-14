@@ -15,7 +15,9 @@
 
   --backgroundColor: #0d0d2e;
   --accentColor: #fff;
+  --accentColorTwo: #b3b3b3;
   --textColor: #222;
+  --textAccentColor: #9d5cf2;
   --inverseColor: #222;
 }
 
@@ -50,6 +52,43 @@ p {
   padding-top: 10px;
 }
 
+/* white button */
+.button-custom {
+  font-family: var(--titleFont);
+  font-weight: 700;
+  background-color: white;
+  padding: 20px 16px 14px;
+  border: 2px solid #9b79f2;
+  border-radius: 4px;
+  box-shadow: var(--customBoxShadow);
+  transition: all 300ms ease;
+}
+
+.button-custom:hover,
+.button-custom > a:hover {
+  color: var(--textAccentColor);
+  box-shadow: none;
+  text-decoration: none;
+  transition: all 300ms ease;
+}
+
+/* purple button */
+.button-custom--cta {
+  background-color: #9b79f2;
+  color: white;
+  text-decoration: none;
+}
+
+.button-custom--cta:hover,
+.button-custom--cta > a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.button-custom--link {
+  padding: 10px 10px 8px;
+}
+
 /* Bulma override */
 .container-custom {
   max-width: 70vw !important;
@@ -65,6 +104,10 @@ p {
 
 .has-background-transparent {
   background-color: transparent;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
 }
 
 .is-fullheight {
@@ -91,11 +134,14 @@ p {
 
 .main-bg {
   background: url('./bg-image.png') no-repeat center center fixed;
+  background-size: cover;
 }
 
-.main-landing {
-  /* background: linear-gradient(#163a76, rgba(20, 40, 109, .94), #0b2148); */
-  background: url('./bg-image.png') no-repeat center center fixed;
+.main-bg--projects {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255 255 255 / 80%);
+  z-index: 99;
 }
 
 /* scrollbar */
@@ -111,7 +157,7 @@ p {
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  background-color: var(--backgroundColor);
+  background-color: var(--accentColorTwo);
   width: 8px;
   border-radius: 32px;
 }
@@ -120,6 +166,9 @@ p {
   background-color: var(--accentColor);
   width: 8px;
   border-radius: 32px;
+}
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 
 /* skills */
@@ -180,6 +229,13 @@ p {
   animation: fadeIn;
   -webkit-animation-duration: 2s !important;
   animation-duration: 2s !important;
+}
+
+.animate__fadeInSlower {
+  animation: fadeIn;
+  transition-delay: 2s;
+  -webkit-animation-duration: 3s !important;
+  animation-duration: 3s !important;
 }
 
 /* defocus content */

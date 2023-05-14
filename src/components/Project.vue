@@ -114,6 +114,7 @@ export default {
     max-height: calc(100vh - 150px);
     height: 100%;
     overflow: hidden;
+    z-index: 10000;
 }
 
 @media(max-device-width: 1400px) {
